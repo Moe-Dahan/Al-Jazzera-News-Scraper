@@ -114,6 +114,8 @@ schedules the news scraper to work at choosen time
 and asks for user settings to save.
 '''
 if __name__ == '__main__':
+    if not os.path.exists("lib"):
+        os.makedirs("lib")
     if os.path.isfile("lib/settings.json"):
         print("File Found in lib/settings.json")
         *_, time_for_alert = reading_settings()
